@@ -1,0 +1,113 @@
+/* Hand of God — minimal, mobile-first styles */
+:root {
+  --bg: #ffffff;
+  --text: #0b1221;
+  --muted: #5b6477;
+  --line: #e7edf5;
+  --primary: #2145ff;
+  --primary-ink: #ffffff;
+  --accent: #ffd36b;
+  --surface: #f7f9fc;
+  --shadow: 0 10px 30px rgba(11, 18, 33, 0.08);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a.link { text-decoration: underline; text-underline-offset: 3px; }
+
+.container { width: min(1100px, 100%); margin-inline: auto; padding: 0 16px; }
+.skip-link { position: absolute; left: -999px; top: -999px; }
+.skip-link:focus { left: 8px; top: 8px; z-index: 10; background: var(--text); color: #fff; padding: 8px 12px; border-radius: 6px; }
+
+/* Header */
+.site-header { position: sticky; top: 0; backdrop-filter: saturate(130%) blur(8px); background: color-mix(in srgb, var(--bg) 88%, transparent); border-bottom: 1px solid var(--line); z-index: 50; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
+.brand__logo { width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow); }
+.brand__name { font-size: 16px; }
+.site-nav { display: flex; gap: 12px; align-items: center; }
+.nav-link { padding: 8px 12px; border-radius: 10px; color: var(--muted); }
+.nav-link:hover { color: var(--text); background: var(--surface); }
+.nav-primary { color: var(--primary); font-weight: 700; }
+
+/* Hero */
+.hero { background: radial-gradient(1200px 400px at 80% -10%, #dbe7ff 0%, transparent 70%), linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); padding: 48px 0 24px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; } }
+.eyebrow { color: var(--primary); font-weight: 700; letter-spacing: 0.24px; text-transform: uppercase; font-size: 12px; }
+.hero-title { font-size: clamp(28px, 6vw, 56px); line-height: 1.05; margin: 8px 0 12px; letter-spacing: -0.5px; }
+.hero-sub { color: var(--muted); font-size: clamp(16px, 2.5vw, 18px); max-width: 60ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.hero-art { aspect-ratio: 4/3; }
+.hero-svg { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; padding: 14px 18px; font-weight: 700; letter-spacing: 0.2px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease, background .2s ease; box-shadow: var(--shadow); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 94%, #fff 6%), color-mix(in srgb, var(--primary) 80%, #000 20%)); color: var(--primary-ink); }
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-ghost { background: #fff; border: 1px solid var(--line); color: var(--text); }
+.btn-ghost:hover { background: var(--surface); }
+
+/* Stars */
+.stars { display: inline-flex; gap: 4px; color: #f7b500; }
+.icon-star { width: 18px; height: 18px; fill: #f7b500; opacity: 0.95; }
+.icon-star--half { opacity: 0.4; }
+.hero-trust { display: flex; align-items: center; gap: 12px; margin-top: 12px; color: var(--muted); font-size: 14px; }
+.trust-copy { margin: 0; }
+
+/* Features */
+.features { padding: 48px 0; }
+.feature { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: center; padding: 18px 0; }
+.feature + .feature { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 36px; }
+.feature__media { order: 0; }
+.feature__content { order: 1; }
+.feature h2 { font-size: clamp(22px, 3vw, 32px); margin: 0 0 8px; letter-spacing: -0.2px; }
+.feature p { margin: 0; color: var(--muted); }
+.mockup { width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow); background: #fff; }
+
+@media (min-width: 900px) {
+  .feature { grid-template-columns: 1.05fr 0.95fr; gap: 36px; }
+  .feature--reverse .feature__media { order: 2; }
+  .feature--reverse .feature__content { order: 1; }
+}
+
+/* CTA */
+.cta { padding: 56px 0 64px; background: radial-gradient(800px 240px at 20% -10%, #e8f1ff 0%, transparent 70%), linear-gradient(180deg, #ffffff 0%, #f7faff 100%); border-top: 1px solid var(--line); }
+.cta-inner { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: center; }
+.cta-copy { max-width: 60ch; }
+.cta h2 { font-size: clamp(24px, 4vw, 40px); letter-spacing: -0.3px; margin: 0 0 8px; }
+.cta-sub { color: var(--muted); margin: 0 0 14px; }
+.cta-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.trust-badges { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--muted); box-shadow: var(--shadow); }
+.badge__icon { font-size: 14px; }
+.testimonial { margin: 10px 0 0; color: var(--muted); }
+.testimonial blockquote { margin: 0 0 6px; font-style: italic; }
+
+/* Footer */
+.site-footer { padding: 24px 0; border-top: 1px solid var(--line); background: #fff; }
+.footer-inner { display: flex; justify-content: center; }
+
+/* Reveal on scroll */
+[data-reveal] { opacity: 0; transform: translateY(14px); }
+.reveal-visible { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
+
+/* Accessibility & motion */
+:focus-visible { outline: 2px solid color-mix(in srgb, var(--primary) 70%, #000 20%); outline-offset: 3px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .reveal-visible { transition: none !important; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
