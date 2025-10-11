@@ -1,0 +1,16 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Paisagem serena nas montanhas</title>
+  <desc id="desc">Mockup ilustrativo com formas suaves representando montanhas, lago e céu calmo.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eafff8" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g1)"/>
+  <circle cx="980" cy="140" r="60" fill="#ffd166" opacity="0.8"/>
+  <path d="M0 700 C200 600, 400 680, 600 620 C800 560, 1000 600, 1200 520 L1200 900 L0 900 Z" fill="#b7f7e9"/>
+  <path d="M0 600 C220 520, 420 560, 600 500 C780 440, 960 500, 1200 420 L1200 900 L0 900 Z" fill="#8ee5d2"/>
+  <path d="M0 520 C220 460, 420 480, 600 440 C780 400, 960 420, 1200 380 L1200 900 L0 900 Z" fill="#59c7ac"/>
+  <text x="60" y="120" fill="#0b3a2d" font-size="48" font-family="sans-serif" font-weight="700">Escape. Tranquilidade. Descoberta.</text>
+</svg>
